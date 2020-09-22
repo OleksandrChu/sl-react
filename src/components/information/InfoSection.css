@@ -1,0 +1,25 @@
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-bottom: 1px solid #c8c7c7;
+}
+
+.item-container {
+    display: flex;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.title-container {
+    width: 20%;
+}
+
+.desc-container {
+    width: 70%;
+}

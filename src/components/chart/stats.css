@@ -1,0 +1,14 @@
+.chart {
+    text-align: center;
+    margin: 2em;
+    width: 500px;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #c8c7c7;
+}
+
+.statistics-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
