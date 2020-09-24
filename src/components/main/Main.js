@@ -3,7 +3,8 @@ import {Route, Switch} from "react-router-dom";
 import Registration from "../shared/Registration";
 import Payment from "../shared/Payment";
 import Statistics from "../shared/Statistics";
-import ClientInformation from "../shared/ClientInformation";
+import Client from "../shared/Client";
+import Account from "../shared/Account";
 
 
 function Main() {
@@ -12,8 +13,8 @@ function Main() {
             <Switch>
                 <Route path="/register" component={Registration}/>
                 <Route path="/payment" component={Payment}/>
-                <Route path="/info/client/:id" component={ClientInformation}/>
-                <Route path="/info/transaction/:id" component={ClientInformation}/>
+                <Route path="/info/client/:id" component={Client}/>
+                <Route path="/info/account/:id" component={Account}/>
                 <Route path="/statistics" component={Statistics}/>
             </Switch>
         </main>

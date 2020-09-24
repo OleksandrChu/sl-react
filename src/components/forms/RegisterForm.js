@@ -30,7 +30,7 @@ function setExpirations() {
 }
 
 const format = (date) => {
-    const values = [date.getFullYear(), ('0' + date.getMonth()).slice(-2),('0' + date.getDate()).slice(-2)];
+    const values = [date.getFullYear(), ('0' + date.getMonth()).slice(-2), ('0' + date.getDate()).slice(-2)];
     return values.join('-')
 }
 
@@ -46,10 +46,8 @@ function RegisterForm(props) {
     const onSubmitHandler = (event) => {
         event.preventDefault();
         const client = buildObject(firstName, lastname, phone, membershipType, expirationDate);
-        axios.post('http://localhost:5000/api/register', client)
-            .then(response => props.onRedirectHandler(response.data))
+        props.onCreateClient(client);
     };
-
     return (
         <form className={classes.root} onSubmit={onSubmitHandler}>
             <TextField className={classes.text} {...firstName} required label="Firstname" variant="outlined"/>
@@ -61,10 +59,8 @@ function RegisterForm(props) {
                     {...membershipType}
                     labelId="type-label"
                     label="Membership type">
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    {memberships.map((type, index) => <MenuItem key={index} value={type.value}>{type.name}</MenuItem>)}
+                    <MenuItem value="">None</MenuItem>
+                    {props.types.map((type, index) => <MenuItem key={index} value={type.value}>{type.name}</MenuItem>)}
                 </Select>
             </FormControl>
             <FormControl variant="outlined" className={classes.text}>
@@ -74,9 +70,7 @@ function RegisterForm(props) {
                     type='date'
                     labelId="type-label"
                     label="Expiration date">
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
+                    <MenuItem value="">None</MenuItem>
                     {setExpirations().map((date, index) => <MenuItem key={index} value={date}>{date}</MenuItem>)}
                 </Select>
             </FormControl>

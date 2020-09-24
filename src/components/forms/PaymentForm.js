@@ -33,7 +33,7 @@ function PaymentForm(props) {
                     accountId: account.id,
                     amount: parseInt(transaction.amount),
                     description: transaction.desc
-                }).then(res => console.log(res));
+                }).then(res => props.onRedirectHandler(res.data));
             });
     };
 

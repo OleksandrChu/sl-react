@@ -7,13 +7,14 @@ export default function Payment() {
 
     const onRedirectHandler = (client) => {
         setTransaction(client)
+        console.log(client)
     }
 
     return (
         <div className='wrapper'>
             <PaymentForm onRedirectHandler={onRedirectHandler}/>
             {(transaction) ?
-                <Redirect from="/register" to={`/info/client/${transaction.id}`} endpoint={'client'} id={transaction.id}/> : ''}
+                <Redirect from="/register" to={`/info/account/${transaction.accountId}`} id={transaction.accountId}/> : ''}
         </div>
     );
 }

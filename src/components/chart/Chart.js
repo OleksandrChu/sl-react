@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './stats.css'
 import {useServerData} from "../hooks/ApiHook";
 import {Pie} from "react-chartjs-2";
